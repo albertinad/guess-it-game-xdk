@@ -1,0 +1,92 @@
+.game-scene {
+    width: 100%;
+    height: 100%;
+}
+
+.game-scene .info {
+    height: 70px;
+    background-color: #ccc;
+}
+
+.current-guess .img-container {
+    position: relative;
+    max-height: 12em;
+    height: 12em;
+}
+
+.current-guess .img-container img {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    vertical-align: middle;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* sub-sections */
+
+.game-scene .info .player {
+    width: 80%;
+    float: left;
+    padding: 5px;
+}
+
+.game-scene .info .timer {
+    width: 20%;
+    height: 100%;
+    background-color: green;
+    float: right;
+}
+
+.game-scene .info .timer::after {
+    clear:both;
+    content: '';
+    display: block;
+}
+
+/* game result */
+
+.game-result {
+    display: none;
+}
+
+.game-result .scores {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.game-result .game-options {
+    
+}
+
+#afui .game-scene .info .timer label {
+    width: 100%;
+    height: 100%;
+    padding-top: 18px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+#afui .game-scene .current-guess .game-options li {
+    text-align: center;
+}
+
+#afui .game-scene .current-guess .game-options li.active {
+    color: white;
+    background-color: #6262fd;
+}
+
+#afui .afPopup {
+    left: 0 !important;
+    right: 0 !important;
+}

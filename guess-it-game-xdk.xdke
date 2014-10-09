@@ -1,0 +1,13 @@
+{
+  "project": {
+    "projectSettingsVersion": "1.1",
+    "projectFiles": {},
+    "projectDirectories": {},
+    "currentService": {
+      "methodapi": "lookupArtist",
+      "endPoint": "Lookup",
+      "service": "spotify"
+    },
+    "initialAutoPluginCount": 0
+  }
+}
