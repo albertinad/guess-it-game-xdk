@@ -199,7 +199,7 @@ var game = game || {};
             that._controller.showHistory();
         });
 
-        $(document).on('click', '#btn-clear', function () {
+        this._$view.on('click', '#btn-clear', function () {
             that._controller.clear();
         });
     };
@@ -242,7 +242,7 @@ var game = game || {};
     GameSetupView.prototype.initialize = function () {
         var that = this;
 
-        $(document).on("click", "#img-user", function () {
+        this._$playerImg.on("click", function () {
             function onSuccess(imageURI) {
                 that._$playerImg.src = playerImg;
             }
@@ -259,7 +259,8 @@ var game = game || {};
             navigator.camera.getPicture(onSuccess, onFail, config);
         });
 
-        $(document).on("click", "#btn-start-game", function (evt) {
+        // delegate click evento to start game button
+        this._$view.on("click", "#btn-start-game", function (evt) {
             var playerName = that._$playerName.val();
             var playerImg = that._$playerImg.attr('src');
             var gameMode = 'normal';
