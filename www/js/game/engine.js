@@ -149,7 +149,7 @@ var game = game || {};
         result.score = this._player.Score;
         result.intents = this._intent;
         result.time = null;
-
+        result.playerImg = this._player.ImageUrl;
         return result;
     }
 
@@ -157,7 +157,8 @@ var game = game || {};
         var raw = {
             player: this._player.Name,
             score: this._player.Score,
-            intents: this._intent
+            intents: this._intent,
+            playerImg: this._player.ImageUrl
         }
 
         return raw;
