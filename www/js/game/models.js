@@ -143,7 +143,8 @@ var game = game || {};
     /**
      * Player constructor function
      */
-    function Player(name) {
+    function Player(name, imageUrl) {
+        this._imageUrl = imageUrl;
         this._name = name || null;
         this._score = null;
     }
@@ -151,6 +152,12 @@ var game = game || {};
     Object.defineProperty(Player.prototype, 'Name', {
         get: function () {
             return this._name;
+        }
+    });
+    
+    Object.defineProperty(Player.prototype, 'ImageUrl', {
+        get: function () {
+            return this._imageUrl;
         }
     });
 

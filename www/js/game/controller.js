@@ -18,8 +18,8 @@ var game = game || {};
         this._view = view;
     };
 
-    Game.prototype.newGame = function (playerName, gameMode) {
-        this._player = new game.models.Player(playerName);
+    Game.prototype.newGame = function (playerName, gameMode, playerImageUrl) {
+        this._player = new game.models.Player(playerName, playerImageUrl);
         this._guessElements.load(gameMode);
 
         this._game = new game.core.GameEngine(this._player, this._guessElements);
@@ -27,7 +27,7 @@ var game = game || {};
 
     Game.prototype.show = function () {
         this._view.showGameScene();
-        this._view.showPlayerInfo(this._player.Name, this._player.scoreValue());
+        this._view.showPlayerInfo(this._player.Name, this._player.scoreValue(), this._player.ImageUrl);
     };
 
     Game.prototype.start = function () {

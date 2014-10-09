@@ -13,6 +13,7 @@ var game = game || {};
         this._$gameResult = gameView.find('#game-result');
         this._$scoreView = this._$gameView.find('#game-player-score');
         this._$playerView = this._$gameView.find('#game-player-name');
+        this._$playerImage = this._$gameView.find('#game-player-image');
         this._$playerIntens = this._$gameView.find('#game-player-intents');
         this._$time = this._$gameView.find('#current-time');
         this._$imageView = this._$gameView.find('#guess-image');
@@ -77,11 +78,12 @@ var game = game || {};
         this._$playerIntens.text(count);
     };
 
-    GameView.prototype.showPlayerInfo = function (name, score) {
+    GameView.prototype.showPlayerInfo = function (name, score, playerImageUrl) {
         if (!score) score = 0;
 
         this._$playerView.text(name);
         this._$scoreView.text(score);
+        this._$playerImage.attr("src", playerImageUrl);
     };
 
     GameView.prototype.showSuccess = function (score) {
@@ -202,10 +204,12 @@ var game = game || {};
 
         for (var i = 0; i < size; i++) {
             item = data[i];
+            var $thumbnail = $('<div class="thumbnail"><img src="' + item.playerImg + '"/>');
             var $player = $('<h3>' + item.player + '</h3>');
             var $score = $('<h4> Score: ' + item.score + ' - Intents: ' + item.intents + '</h4>');
             var $listItem = $('<li></li>');
 
+            $listItem.append($thumbnail);
             $listItem.append($player);
             $listItem.append($score);
 
