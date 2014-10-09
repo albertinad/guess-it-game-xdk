@@ -234,9 +234,7 @@ var game = game || {};
     GameEngine.prototype.onStopCallback = function (time) {
         console.log('stop');
 
-        if (time === 0) {
-            this.notifyLoose();
-        }
+        if (time === 0) this.notifyLoose();
     };
 
     GameEngine.prototype.onProgressCallback = function (progress) {
