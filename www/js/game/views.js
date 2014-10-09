@@ -5,7 +5,7 @@ var game = game || {};
     'use strict';
 
     /**
-     * Game constructor function
+     * GameView constructor function
      */
     function GameView(controller, gameView) {
         this._controller = controller;
@@ -181,11 +181,14 @@ var game = game || {};
         $.ui.goBack();
     };
 
+    /**
+     * HistoryView constructor function
+     */
     function HistoryView(controller, view) {
         this._controller = controller;
         this._$view = view;
         this._$list = this._$view.find('#list-history');
-        
+
         this.initialize();
     }
 
@@ -224,8 +227,54 @@ var game = game || {};
         this._$list.empty();
     };
 
+    /**
+     * HistoryView constructor function
+     */
+    function GameSetupView(controller, view) {
+        this._controller = controller;
+        this._$view = view;
+        this._$playerName = this._$view.find('#txt-player-name');
+        this._$playerImg = this._$view.find('#img-user');
+
+        this.initialize();
+    }
+
+    GameSetupView.prototype.initialize = function () {
+        var that = this;
+
+        $(document).on("click", "#img-user", function () {
+            function onSuccess(imageURI) {
+                that._$playerImg.src = playerImg;
+            }
+
+            function onFail(message) {
+                alert('Failed because: ' + message);
+            }
+
+            var config = {
+                quality: 50,
+                destinationType: Camera.DestinationType.FILE_URI
+            };
+
+            navigator.camera.getPicture(onSuccess, onFail, config);
+        });
+
+        $(document).on("click", "#btn-start-game", function (evt) {
+            var playerName = that._$playerName.val();
+            var playerImg = that._$playerImg.attr('src');
+            var gameMode = 'normal';
+
+            that._controller.createNewGame(playerName, gameMode);
+
+            activate_subpage('#page-gamesub');
+
+            that._$playerName.val('');
+        });
+    };
+
     game.views = {
         Game: GameView,
+        GameSetup: GameSetupView,
         History: HistoryView
     };
 })(game);

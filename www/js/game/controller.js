@@ -130,6 +130,9 @@ var game = game || {};
         this._view.showLose();
     };
 
+    /**
+     * History Controller constructor function.
+     */
     function History() {
         this._view = null;
     }
@@ -153,12 +156,30 @@ var game = game || {};
         window.localStorage.clear();
     };
 
+    /**
+     * GameSetup Controller constructor function.
+     */
+    function GameSetup() {
+        this._view = null;
+    }
+
+    GameSetup.prototype.setView = function (view) {
+        this._view = view;
+    };
+
+    GameSetup.prototype.createNewGame = function (playerName, gameMode) {
+        // TODO it's ugly..
+        gameInstance.newGame(playerName, gameMode);
+    };
+
     var gameInstance = new Game();
+    var gameSetupInstance = new GameSetup();
     var historyInstance = new History();
 
     // game api
     game.controllers = {
         Game: gameInstance,
+        GameSetup: gameSetupInstance,
         History: historyInstance
     };
 })(game);

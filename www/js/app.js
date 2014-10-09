@@ -12,12 +12,15 @@
         }
 
         var gameMarkup = $('#page-game');
+        var gameSetupMarkup = $('#page-game-config');
         var historyMarkup = $('#page-history');
 
         var gameView = new game.views.Game(game.controllers.Game, gameMarkup);
+        var gameSetupView = new game.views.GameSetup(game.controllers.GameSetup, gameSetupMarkup);
         var historyView = new game.views.History(game.controllers.History, historyMarkup);
 
         game.controllers.Game.setView(gameView);
+        game.controllers.GameSetup.setView(gameSetupView);
         game.controllers.History.setView(historyView);
     });
 
