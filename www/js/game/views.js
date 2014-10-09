@@ -240,13 +240,14 @@ var game = game || {};
         this._$view = view;
         this._$playerName = this._$view.find('#txt-player-name');
         this._$playerImg = this._$view.find('#img-user');
+        this._defaultPlayerImage = "images/doge.jpg";
 
         this.initialize();
     }
 
     GameSetupView.prototype.initialize = function () {
         var that = this;
-
+        that.resetForm();
         this._$playerImg.on('click', function () {
             function onSuccess(imageURI) {
                 if (imageURI) that._$playerImg[0].src = imageURI;
@@ -273,10 +274,14 @@ var game = game || {};
             that._controller.createNewGame(gameMode, playerName, playerImg);
 
             activate_subpage('#page-gamesub');
-
-            that._$playerName.val('');
+            that.resetForm();  
         });
     };
+    
+    GameSetupView.prototype.resetForm = function() {
+        this._$playerName.val('');
+        this._$playerImg[0].src = this._defaultPlayerImage;
+    }
 
     game.views = {
         Game: GameView,
