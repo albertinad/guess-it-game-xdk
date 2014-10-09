@@ -11,8 +11,8 @@
             $('#afui').addClass('light');
         }
 
-        var gameMarkup = $("#page-gamesub");
-        var historyMarkup = $('#page-historysub');
+        var gameMarkup = $('#page-game');
+        var historyMarkup = $('#page-history');
 
         var gameView = new game.views.Game(game.controllers.Game, gameMarkup);
         var historyView = new game.views.History(game.controllers.History, historyMarkup);
@@ -36,5 +36,4 @@
     }
 
     document.addEventListener('app.Ready', onDeviceReady, false);
-    // document.addEventListener('DOMContentLoaded', onContentLoaded, false);
 })();

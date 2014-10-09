@@ -1,211 +1,219 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/af.ui.min.css">
-        <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/icons.min.css">
-        <title>Guess It!</title>
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<head>
+    <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/af.ui.min.css">
+    <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/icons.min.css">
+    <title>Guess It!</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-        <link rel="stylesheet" href="css/old-android.css">
-        <link rel="stylesheet" type="text/css" href="app_framework/2.1/plugins/css/af.popup.css">
-        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
-        <link rel="stylesheet" type="text/css" href="css/index/game.css">
+    <link rel="stylesheet" href="css/old-android.css">
+    <link rel="stylesheet" type="text/css" href="app_framework/2.1/plugins/css/af.popup.css">
+    <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+    <link rel="stylesheet" type="text/css" href="css/index/game.css">
 
-        <!-- See http://app-framework-software.intel.com/documentation.php#afui/afui_jquery -->
-        <script src="app_framework/2.1/appframework.js"></script>
-        <script src="app_framework/2.1/appframework.ui.js" data-ver="1"></script>
-        <script src="app_framework/2.1/plugins/af.popup.js"></script>
+    <!-- See http://app-framework-software.intel.com/documentation.php#afui/afui_jquery -->
+    <script src="app_framework/2.1/appframework.js"></script>
+    <script src="app_framework/2.1/appframework.ui.js" data-ver="1"></script>
+    <script src="app_framework/2.1/plugins/af.popup.js"></script>
 
-        <script src="intelxdk.js"></script>
-        <!-- phantom library, needed for XDK "legacy" container api calls -->
-        <script src="cordova.js"></script>
-        <!-- phantom library, needed for Cordova api calls -->
-        <script src="xhr.js"></script>
-        <!-- phantom library, needed for XDK "legacy" container CORS -->
+    <script src="intelxdk.js"></script>
+    <!-- phantom library, needed for XDK "legacy" container api calls -->
+    <script src="cordova.js"></script>
+    <!-- phantom library, needed for Cordova api calls -->
+    <script src="xhr.js"></script>
+    <!-- phantom library, needed for XDK "legacy" container CORS -->
 
-        <script src="js/data/data.js"></script>
-        <script src="js/game/models.js"></script>
-        <script src="js/game/engine.js"></script>
-        <script src="js/game/views.js"></script>
-        <script src="js/game/controller.js"></script>
+    <script src="js/data/data.js"></script>
+    <script src="js/game/models.js"></script>
+    <script src="js/game/engine.js"></script>
+    <script src="js/game/views.js"></script>
+    <script src="js/game/controller.js"></script>
 
-        <script src="js/app.js"></script>
-        <script src="js/init-dev.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/init-dev.js"></script>
 
-        <script type="application/javascript" src="js/index_user_scripts.js"></script>
-        <script type="application/javascript" src="js/af_subpage.js"></script>
-    </head>
+    <script type="application/javascript" src="js/index_user_scripts.js"></script>
+    <script type="application/javascript" src="js/af_subpage.js"></script>
+</head>
 
-    <body id="afui">
+<body id="afui">
 
-        <!-- IMPORTANT: Do not include your weinre script tag as part of your release builds! -->
-        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
-        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+    <!-- IMPORTANT: Do not include your weinre script tag as part of your release builds! -->
+    <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
+    <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
 
-        <div class="uwrap" id="content">
+    <div class="uwrap" id="content">
 
-            <!-- Home page -->
-            <div class="upage panel" id="mainpage" data-header="none" data-footer="none">
-                <div class="upage-outer">
-                    <div class="upage-content" id="mainsub">
+        <!-- Home page -->
+        <div class="upage panel" id="mainpage" data-header="none" data-footer="none">
+            <div class="upage-outer">
+                <div class="upage-content" id="mainsub">
 
-                        <div class="grid grid-pad urow uib_row_3 row-height-3" data-uib="layout/row" data-ver="0">
-                            <div class="col uib_col_3 col-0_12-12" data-uib="layout/col" data-ver="0">
-                                <div class="widget-container content-area center-h-v-col">
+                    <div class="grid grid-pad urow uib_row_3 row-height-3" data-uib="layout/row" data-ver="0">
+                        <div class="col uib_col_3 col-0_12-12" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area center-h-v-col">
 
-                                    <div class="widget uib_w_1 d-margins" data-uib="media/text" data-ver="0">
-                                        <div class="widget-container left-receptacle"></div>
-                                        <div class="widget-container right-receptacle"></div>
-                                        <div>
-                                            <p>Guess the Picture!</p>
-                                        </div>
+                                <div class="widget uib_w_1 d-margins" data-uib="media/text" data-ver="0">
+                                    <div class="widget-container left-receptacle"></div>
+                                    <div class="widget-container right-receptacle"></div>
+                                    <div>
+                                        <p>Guess the Picture!</p>
                                     </div>
                                 </div>
                             </div>
-                            <span class="uib_shim"></span>
                         </div>
-
-                        <div class="grid grid-pad urow uib_row_4 row-height-4" data-uib="layout/row" data-ver="0">
-                            <div class="col uib_col_5 col-0_12-12" data-uib="layout/col" data-ver="0">
-                                <div class="widget-container content-area vertical-col">
-
-                                    <a class="button widget uib_w_2 d-margins homeButton icon check green" data-uib="app_framework/button" data-ver="1" id="btn-new-game">New Game</a><a class="button widget uib_w_4 d-margins icon star" data-uib="app_framework/button"
-                                    data-ver="1" id="btn-history">History</a>
-
-                                    <span class="uib_shim"></span>
-                                </div>
-                            </div>
-                            <span class="uib_shim"></span>
-                        </div>
+                        <span class="uib_shim"></span>
                     </div>
-                    <!-- /upage-content -->
 
-                </div>
-                <!-- /upage-outer -->
-            </div>
+                    <div class="grid grid-pad urow uib_row_4 row-height-4" data-uib="layout/row" data-ver="0">
+                        <div class="col uib_col_5 col-0_12-12" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col">
 
-            <!-- new game config page -->
-            <div class="upage panel" id="page-game-config" data-header="af-header-0" data-footer="none">
-                <div class="upage-outer">
-                    <header class="container-group inner-element uib_w_11" data-uib="app_framework/header" data-ver="1" id="af-header-0">
-                        <h1>New Game</h1>
-                        <div class="widget-container wrapping-col single-centered"></div>
-                        <div class="widget-container content-area horiz-area wrapping-col left with-back"><a class="button backButton">Back</a>
-                        </div>
-                        <div class="widget-container content-area horiz-area wrapping-col right"></div>
-                    </header>
-                    <div id="page-game-configsub" class="upage-content ">
+                                <a class="button widget uib_w_2 d-margins homeButton icon check green" data-uib="app_framework/button" data-ver="1" id="btn-new-game">New Game</a><a class="button widget uib_w_4 d-margins icon star" data-uib="app_framework/button" data-ver="1" id="btn-history">History</a>
 
-                        <div class="grid grid-pad urow uib_row_6 row-height-6" data-uib="layout/row" data-ver="0">
-                            <div class="col uib_col_9 col-0_12-12" data-uib="layout/col" data-ver="0">
-                                <div class="widget-container content-area vertical-col center">
-
-                                    <div class="table-thing with-label widget uib_w_12 d-margins homeButton" data-uib="app_framework/input" data-ver="1">
-                                        <label class="narrow-control label-inline label-fix" for="txt-player-name">Name</label>
-                                        <input class="wide-control" placeholder="Player" type="text" id="txt-player-name">
-                                    </div><a class="button widget uib_w_20 d-margins" data-uib="app_framework/button" data-ver="1">Picture</a><span class="uib_shim"></span>
-                                </div>
+                                <span class="uib_shim"></span>
                             </div>
-                            <span class="uib_shim"></span>
                         </div>
-
-                        <div class="grid grid-pad urow uib_row_7 row-height-7" data-uib="layout/row" data-ver="0">
-                            <div class="col uib_col_10 col-0_12-12" data-uib="layout/col" data-ver="0">
-                                <div class="widget-container content-area vertical-col">
-
-                                    <a class="button widget uib_w_18 d-margins icon check green" data-uib="app_framework/button" data-ver="1" id="btn-start-game">START</a><span class="uib_shim"></span>
-                                </div>
-                            </div>
-                            <span class="uib_shim"></span>
-                        </div>
+                        <span class="uib_shim"></span>
                     </div>
                 </div>
-                <!-- /upage-outer -->
+                <!-- /upage-content -->
+
             </div>
+            <!-- /upage-outer -->
+        </div>
 
-            <!-- history page -->
-            <div class="upage panel" id="page-history" data-header="af-header-1" data-footer="none">
-                <div class="upage-outer">
-                    <header class="container-group inner-element uib_w_6" data-uib="app_framework/header" data-ver="1" id="af-header-1">
-                        <h1>Game History</h1>
-                        <div class="widget-container wrapping-col single-centered"></div>
-                        <div class="widget-container content-area horiz-area wrapping-col left with-back"><a class="button backButton">Back</a>
-                        </div>
-                        <div class="widget-container content-area horiz-area wrapping-col right"></div>
-                    </header>
-                    <div id="page-historysub" class="upage-content ">
-                        <ul id="list-history" class="list inset game-options"></ul>
-
-                        <div class="button-grouped flex">
-                            <a id="btn-clear" class="button">Clear History</a>
-                        </div>
+        <!-- new game config page -->
+        <div class="upage panel" id="page-game-config" data-header="af-header-0" data-footer="none">
+            <div class="upage-outer">
+                <header class="container-group inner-element uib_w_11" data-uib="app_framework/header" data-ver="1" id="af-header-0">
+                    <h1>New Game</h1>
+                    <div class="widget-container wrapping-col single-centered"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left with-back"><a class="button backButton">Back</a>
                     </div>
-                </div>
-                <!-- /upage-outer -->
-            </div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </header>
+                <div id="page-game-configsub" class="upage-content ">
 
-            <!-- game page -->
-            <div class="upage panel" id="page-game" data-header="af-header-2" data-footer="none">
-                <div class="upage-outer">
-                    <header class="container-group inner-element uib_w_19" data-uib="app_framework/header" data-ver="1" id="af-header-2">
-                        <h1>Guess it!</h1>
-                        <div class="widget-container wrapping-col single-centered"></div>
-                        <div class="widget-container content-area horiz-area wrapping-col left with-back"><a class="button backButton">Back</a>
-                        </div>
-                        <div class="widget-container content-area horiz-area wrapping-col right"></div>
-                    </header>
-                    <div id="page-gamesub" class="upage-content">
-                        <div id="game-scene" class="game-scene">
-                            <!-- timer section -->
-                            <div class="info">
-                                <div class="thumbnail">
-                                    <img id="game-player-image" />
-                                </div>                                    
-                                <div class="player">
-                                    <h4>PLAYER: <span id="game-player-name"></span></h4>
-                                    <h4>SCORE: <span id="game-player-score"></span></h4>
-                                    <h5>ATTEMPTS AVAILABLE: <span id="game-player-intents"></span></h4>
+                    <div class="grid grid-pad urow uib_row_6 row-height-6" data-uib="layout/row" data-ver="0">
+                        <div class="col uib_col_9 col-0_12-12" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col center">
+                                <h3>Player Information</h3>
+
+                                <div class="widget uib_w_20 scale-image d-margins" data-uib="media/img" data-ver="0">
+                                    <figure class="figure-align">
+                                        <img id="img-user" src="images/Strabburg.jpg">
+                                        <figcaption data-position="bottom"></figcaption>
+                                    </figure>
                                 </div>
 
-                                <div class="timer">
-                                    <label id="current-time">0</label>
+                                <div class="table-thing with-label widget uib_w_12 d-margins homeButton" data-uib="app_framework/input" data-ver="1">
+                                    <label class="narrow-control label-inline label-fix" for="txt-player-name">Name</label>
+                                    <input class="wide-control" placeholder="Player" type="text" id="txt-player-name">
                                 </div>
-                            </div>
-
-                            <!-- current element section -->
-                            <div class="current-guess">
-                                <div class="img-container ">
-                                    <img id="guess-image" draggable="false">
-                                </div>
-
-                                <ul id="guess-options" class="list inset game-options"></ul>
+                                <span class="uib_shim"></span>
                             </div>
                         </div>
+                        <span class="uib_shim"></span>
+                    </div>
 
-                        <div id="game-result" class="game-result">
-                            <div class="scores">
-                                <h3 id="title"></h3>
-                                <h2><span id="name"></span></h2>
-                                <h3>SCORE: <span id="score"></span></h3>
-                                <h3>ATTEMPTS: <span id="intents"></span></h3>
-                            </div>
-                            <div class="game-options">
-                                <div class="button-grouped flex">
-                                    <a id="btn-save" class="button">Save </a>
-                                </div>
+                    <div class="grid grid-pad urow uib_row_7 row-height-7" data-uib="layout/row" data-ver="0">
+                        <div class="col uib_col_10 col-0_12-12" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col">
+
+                                <a class="button widget uib_w_18 d-margins icon check green" data-uib="app_framework/button" data-ver="1" id="btn-start-game">START</a><span class="uib_shim"></span>
                             </div>
                         </div>
+                        <span class="uib_shim"></span>
                     </div>
                 </div>
             </div>
             <!-- /upage-outer -->
         </div>
 
-        <!-- /uwrap -->
-    </body>
+        <!-- history page -->
+        <div class="upage panel" id="page-history" data-header="af-header-1" data-footer="none">
+            <div class="upage-outer">
+                <header class="container-group inner-element uib_w_6" data-uib="app_framework/header" data-ver="1" id="af-header-1">
+                    <h1>Game History</h1>
+                    <div class="widget-container wrapping-col single-centered"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left with-back"><a class="button backButton">Back</a>
+                    </div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </header>
+                <div id="page-historysub" class="upage-content ">
+                    <ul id="list-history" class="list inset game-options"></ul>
+
+                    <div class="button-grouped flex">
+                        <a id="btn-clear" class="button">Clear History</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /upage-outer -->
+        </div>
+
+        <!-- game page -->
+        <div class="upage panel" id="page-game" data-header="af-header-2" data-footer="none">
+            <div class="upage-outer">
+                <header class="container-group inner-element uib_w_19" data-uib="app_framework/header" data-ver="1" id="af-header-2">
+                    <h1>Guess it!</h1>
+                    <div class="widget-container wrapping-col single-centered"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left with-back"><a class="button backButton">Back</a>
+                    </div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </header>
+                <div id="page-gamesub" class="upage-content">
+                    <div id="game-scene" class="game-scene">
+                        <!-- timer section -->
+                        <div class="info">
+                            <div class="thumbnail">
+                                <img id="game-player-image" />
+                            </div>   
+                            <div class="player">
+                                <h4>PLAYER: <span id="game-player-name"></span></h4>
+                                <h4>SCORE: <span id="game-player-score"></span></h4>
+                                <h4>ATTEMPTS AVAILABLE: <span id="game-player-intents"></span></h4>
+                            </div>
+
+                            <div class="timer">
+                                <label id="current-time">0</label>
+                            </div>
+                        </div>
+
+                        <!-- current element section -->
+                        <div class="current-guess">
+                            <div class="img-container ">
+                                <img id="guess-image" draggable="false">
+                            </div>
+
+                            <ul id="guess-options" class="list inset game-options"></ul>
+                        </div>
+                    </div>
+
+                    <div id="game-result" class="game-result">
+                        <div class="scores">
+                            <h3 id="title"></h3>
+                            <h2><span id="name"></span></h2>
+                            <h3>SCORE: <span id="score"></span></h3>
+                            <h3>ATTEMPTS: <span id="intents"></span></h3>
+                        </div>
+                        <div class="game-options">
+                            <div class="button-grouped flex">
+                                <a id="btn-save" class="button">Save </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /upage-outer -->
+    </div>
+
+    <!-- /uwrap -->
+</body>
 
 </html>
