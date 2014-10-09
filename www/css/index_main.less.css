@@ -410,7 +410,7 @@ body:not(#afui) .upage-outer {
 }
 @media all and (min-width: 0px) {
   #afui .row-height-6 > .col > .content-area {
-    min-height: 100px;
+    min-height: 281px;
   }
 }
 .uib-button-bar .d-margins {
@@ -550,5 +550,21 @@ body:not(#afui) .upage-outer {
 @media all and (min-width: 0px) {
   #afui .row-height-8 > .col > .content-area {
     min-height: 100px;
+  }
+}
+.figure-align {
+  display: table;
+  margin: 0px auto;
+}
+.figure-align img {
+  width: 100%;
+}
+.image-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+@media all {
+  #afui .scale-image {
+    width: 200px;
   }
 }

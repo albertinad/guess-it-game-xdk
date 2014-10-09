@@ -9,6 +9,7 @@ var game = game || {};
      */
     function GameView(controller, gameView) {
         this._controller = controller;
+        this._$view = gameView;
         this._$gameView = gameView.find('#game-scene');
         this._$gameResult = gameView.find('#game-result');
         this._$scoreView = this._$gameView.find('#game-player-score');
@@ -24,6 +25,10 @@ var game = game || {};
     GameView.prototype.initialize = function () {
         var that = this;
         var activeClass = 'active';
+
+        this._$view.bind("loadpanel", function (evt) {
+            that._controller.start();
+        });
 
         this._$optionsList.on('click', 'li', function () {
             var optionIndex = $(this).attr('data-option-index') | 0;
@@ -142,9 +147,6 @@ var game = game || {};
             title: title,
             message: message,
             cancelText: 'Next',
-            //cancelCallback: function () {
-            //    that.saveAndExit();
-            //},
             cancelCallback: function () {
                 that._controller.next();
             },
@@ -179,15 +181,20 @@ var game = game || {};
         $.ui.goBack();
     };
 
-
     function HistoryView(controller, view) {
         this._controller = controller;
         this._$view = view;
         this._$list = this._$view.find('#list-history');
+        
+        this.initialize();
     }
 
     HistoryView.prototype.initialize = function () {
         var that = this;
+
+        this._$view.bind("loadpanel", function (evt) {
+            that._controller.showHistory();
+        });
 
         $(document).on('click', '#btn-clear', function () {
             that._controller.clear();
