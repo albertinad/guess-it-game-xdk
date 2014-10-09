@@ -3,9 +3,10 @@
 
     // hook up event handlers 
     function register_event_handlers() {
-        var _game = game.controllers.Game,
-            _history = game.controllers.History,
-            _playerImageUrl;
+        var _game = game.controllers.Game;
+        var _history = game.controllers.History;
+        var _playerImageUrl = 'assets/elephants.jpg';
+
 
         $(document).on("click", "#btn-history", function (evt) {
             activate_subpage("#page-historysub");
@@ -19,8 +20,10 @@
             var $playerName = $('#txt-player-name');
             var playerName = $playerName.val() || "Unnamed";
             var gameMode = 'normal';
+
             _playerImageUrl = _playerImageUrl || document.getElementById('img-user').src;
             _game.newGame(playerName, gameMode, _playerImageUrl);
+
 
             activate_subpage('#page-gamesub');
 

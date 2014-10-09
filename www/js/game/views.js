@@ -200,6 +200,7 @@ var game = game || {};
 
         $(document).on('click', '#btn-clear', function () {
             that._controller.clear();
+            that.showHistory();
         });
     };
 
