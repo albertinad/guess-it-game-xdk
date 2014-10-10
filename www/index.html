@@ -102,7 +102,7 @@
                     <div class="grid grid-pad urow uib_row_6 row-height-6" data-uib="layout/row" data-ver="0">
                         <div class="col uib_col_9 col-0_12-12" data-uib="layout/col" data-ver="0">
                             <div class="widget-container content-area vertical-col center">
-                                <h3>Player Information</h3>
+                                <h2>Player Information</h2>
 
                                 <div class="widget uib_w_20 scale-image d-margins" data-uib="media/img" data-ver="0">
                                     <figure class="figure-align">
@@ -167,12 +167,13 @@
                     <div class="widget-container content-area horiz-area wrapping-col right"></div>
                 </header>
                 <div id="page-gamesub" class="upage-content">
+                    <!-- current game -->
                     <div id="game-scene" class="game-scene">
                         <!-- timer section -->
                         <div class="info">
-                              <div class="thumbnail">
-                                <img id="game-player-image" />
-                            </div>   
+                            <div class="thumbnail">
+                                <img id="game-player-image">
+                            </div>
                             <div class="player">
                                 <h4>PLAYER: <span id="game-player-name"></span></h4>
                                 <h4>SCORE: <span id="game-player-score"></span></h4>
@@ -193,12 +194,29 @@
                         </div>
                     </div>
 
+                    <!-- game results -->
                     <div id="game-result" class="game-result">
                         <div class="scores">
-                            <h3 id="title"></h3>
-                            <h2><span id="name"></span></h2>
-                            <h3>SCORE: <span id="score"></span></h3>
-                            <h3>ATTEMPTS: <span id="intents"></span></h3>
+
+                            <h3 id="title" class="title"></h3>
+                            <div class="result-divider"></div>
+
+                            <div class="player-info">
+                                <div class="thumbnail-medium">
+                                    <img id="player-image" draggable="false">
+                                </div>
+
+                                <h2 class="name"><span id="name"></span></h2>
+                            </div>
+
+                            <ul class="list inset">
+                                <li class="divider">Final Result</li>
+                                <li>SCORE: <span id="score"></span>
+                                </li>
+                                <li>ATTEMPTS: <span id="intents"></span>
+                                </li>
+                            </ul>
+
                         </div>
                         <div class="game-options">
                             <div class="button-grouped flex">

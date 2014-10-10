@@ -135,6 +135,7 @@ var game = game || {};
 
         this._$gameResult.find('#title').text(title);
         this._$gameResult.find('#name').text(name);
+        this._$gameResult.find('#player-image').attr('src', results.playerImg);
         this._$gameResult.find('#score').text(results.score);
         this._$gameResult.find('#intents').text(results.intents);
     };
@@ -268,7 +269,7 @@ var game = game || {};
         // delegate click evento to start game button
         this._$view.on('click', '#btn-start-game', function (evt) {
             var playerName = that._$playerName.val() || 'Unnamed';
-            var playerImg = that._$playerImg.attr('src'); // TODO document.getElementById('img-user').src;
+            var playerImg = that._$playerImg.attr('src');
             var gameMode = 'normal';
 
             that._controller.createNewGame(gameMode, playerName, playerImg);

@@ -84,7 +84,6 @@ var game = game || {};
         value.push(data);
 
         window.localStorage.setItem("history", JSON.stringify(value));
-        //window.localStorage.clear();
     };
 
     Game.prototype.next = function () {
