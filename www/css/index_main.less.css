@@ -312,14 +312,7 @@ body:not(#afui) .upage-outer {
   text-align: right !important;
 }
 @media all {
-  #afui .d-margins {
-    margin-top: 5px;
-    margin-bottom: 6px;
-  }
-  #afui .wrapping-col > .d-margins {
-    margin-left: 4px;
-    margin-right: 5px;
-  }
+  
 }
 @media all and (min-width: 0px) {
   #afui .row-height-2 > .col > .content-area {
@@ -346,7 +339,7 @@ body:not(#afui) .upage-outer {
 }
 @media all and (min-width: 0px) {
   #afui .row-height-3 > .col > .content-area {
-    min-height: 34px;
+    min-height: 30px;
   }
 }
 .left-receptacle {
@@ -357,7 +350,7 @@ body:not(#afui) .upage-outer {
 }
 @media all and (min-width: 0px) {
   #afui .row-height-4 > .col > .content-area {
-    min-height: 231px;
+    min-height: 259px;
     height: px;
   }
 }
@@ -554,7 +547,7 @@ body:not(#afui) .upage-outer {
 }
 @media all and (min-width: 0px) {
   #afui .row-height-8 > .col > .content-area {
-    min-height: 90px;
+    min-height: 100px;
   }
 }
 .figure-align {
