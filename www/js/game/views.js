@@ -248,23 +248,36 @@ var game = game || {};
 
     GameSetupView.prototype.initialize = function () {
         var that = this;
+
         that.resetForm();
-        this._$playerImg.on('click', function () {
-            function onSuccess(imageURI) {
-                if (imageURI) that._$playerImg[0].src = imageURI;
+
+        function getPicture(config) {
+            return function () {
+                function onSuccess(imageURI) {
+                    if (imageURI) that._$playerImg[0].src = imageURI;
+                }
+
+                function onFail(message) {
+                    alert('Failed because: ' + message);
+                }
+
+                navigator.camera.getPicture(onSuccess, onFail, config);
             }
+        }
 
-            function onFail(message) {
-                alert('Failed because: ' + message);
-            }
+        var configCamera = {
+            quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI
+        };
 
-            var config = {
-                quality: 50,
-                destinationType: Camera.DestinationType.FILE_URI
-            };
+        var configGallery = {
+            quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI,
+            sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM
+        };
 
-            navigator.camera.getPicture(onSuccess, onFail, config);
-        });
+        this._$view.find('#btn-camera').on('click', getPicture(configCamera));
+        this._$view.find('#btn-gallery').on('click', getPicture(configGallery));
 
         // delegate click evento to start game button
         this._$view.on('click', '#btn-start-game', function (evt) {
@@ -275,11 +288,12 @@ var game = game || {};
             that._controller.createNewGame(gameMode, playerName, playerImg);
 
             activate_subpage('#page-gamesub');
-            that.resetForm();  
+
+            that.resetForm();
         });
-    };
-    
-    GameSetupView.prototype.resetForm = function() {
+    }
+
+    GameSetupView.prototype.resetForm = function () {
         this._$playerName.val('');
         this._$playerImg[0].src = this._defaultPlayerImage;
     }
