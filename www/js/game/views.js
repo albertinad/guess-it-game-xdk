@@ -1,3 +1,5 @@
+/*globals activate_page, activate_subpage */
+
 var game = game || {};
 
 (function (game) {
@@ -262,7 +264,7 @@ var game = game || {};
                 }
 
                 navigator.camera.getPicture(onSuccess, onFail, config);
-            }
+            };
         }
 
         var configCamera = {
@@ -291,12 +293,12 @@ var game = game || {};
 
             that.resetForm();
         });
-    }
+    };
 
     GameSetupView.prototype.resetForm = function () {
         this._$playerName.val('');
         this._$playerImg[0].src = this._defaultPlayerImage;
-    }
+    };
 
     game.views = {
         Game: GameView,

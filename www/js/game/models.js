@@ -178,7 +178,7 @@ var game = game || {};
         var raw = {
             player: this._name,
             score: this._score
-        }
+        };
 
         return raw;
     };

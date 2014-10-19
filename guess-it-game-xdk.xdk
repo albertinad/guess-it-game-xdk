@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "appDesigner",
       "projectGuid": "7eaaad37-9a55-4dcb-af7b-4b8c3c41e9ad",
-      "lastModifiedDate": 1412947349094,
+      "lastModifiedDate": 1413698664826,
       "creationDate": 1410378385327
     },
     "XDK-app-designer": "true",
@@ -149,7 +149,7 @@
           "android-targetSdkVersion": "19"
         },
         "isActive_": true,
-        "appName_": "guessItGame",
+        "appName_": "Adivinator",
         "appID_": "xdk.intel.ad.project",
         "appAccess_": "*",
         "icons_": [],
@@ -159,7 +159,7 @@
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "3.3",
         "crosswalkVersion_": "stable",
-        "appVersion_": "0.0.1",
+        "appVersion_": "0.0.2",
         "appDescription_": "",
         "appAuthor_": "",
         "appVersionCode_": "1"

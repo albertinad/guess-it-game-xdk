@@ -1,3 +1,5 @@
+/*globals activate_page, activate_subpage */
+
 (function () {
     "use strict";
 

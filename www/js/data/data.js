@@ -28,6 +28,6 @@ var game = game || {};
         ],
         hard: [],
         geek: []
-    }
+    };
 
 })(game);

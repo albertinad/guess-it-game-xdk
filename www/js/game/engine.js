@@ -150,8 +150,9 @@ var game = game || {};
         result.intents = this._intent;
         result.time = null;
         result.playerImg = this._player.ImageUrl;
+
         return result;
-    }
+    };
 
     GameEngine.prototype.toRawObject = function () {
         var raw = {
@@ -159,7 +160,7 @@ var game = game || {};
             score: this._player.Score,
             intents: this._intent,
             playerImg: this._player.ImageUrl
-        }
+        };
 
         return raw;
     };

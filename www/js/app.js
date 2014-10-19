@@ -1,8 +1,10 @@
 /*jslint browser:true, devel:true, white:true, vars:true */
 /*global $:false, intel:false, app:false, dev:false */
-/*global myEventHandler:false, cordova:false, device:false */
+/*global cordova:false, device:false */
 
 (function () {
+    'use strict';
+    
     // app framework setup
     $.ui.autoLaunch = false;
 
