@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "appDesigner",
       "projectGuid": "7eaaad37-9a55-4dcb-af7b-4b8c3c41e9ad",
-      "lastModifiedDate": 1413914200954,
+      "lastModifiedDate": 1420470495048,
       "creationDate": 1410378385327
     },
     "XDK-app-designer": "true",
@@ -250,6 +250,9 @@
         "crosswalkVersion_": "stable",
         "appVersion_": "0.0.0.1"
       }
-    }
+    },
+    "gameAssetDirectory": "asset",
+    "gameMetadata": {},
+    "projectTags": []
   }
 }
